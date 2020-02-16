@@ -1,4 +1,8 @@
-const weeks = ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'];
+const weekHeaders = ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'];
+const monthNameTable = {
+  1: 'Jan', 2: 'Feb', 3: 'Mar', 4: 'Apr', 5: 'May', 6: 'Jun',
+  7: 'Jul', 8: 'Aug', 9: 'Sep', 10: 'Oct', 11: 'Nov', 12: 'Dec'
+}
 const daysOfMothTable = {
   1: 31, 2: (year) => (year % 4 === 0 && year % 100 !== 0) || year % 400 === 0? 29 : 28,
   3: 31, 4: 30, 5: 31, 6: 30, 7: 31, 8: 31, 9: 30,
@@ -103,11 +107,13 @@ const creatCalendar = (year, month) => {
     }
     week = week + 1 > 6 ? 0 : week + 1;
   }
-  console.log(weeks);
-  return weeks;
+  canlanderTable['weeks'] = weeks;
+  return canlanderTable;
 }
 
 
 export {
-  creatCalendar
+  creatCalendar,
+  weekHeaders,
+  monthNameTable,
 }

@@ -1,6 +1,7 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import MyDatePicker from './components/myDatePicker';
 
 function App() {
   return (
@@ -10,6 +11,12 @@ function App() {
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
+        <MyDatePicker
+          date='2008-01-23'
+          onSelect={(date) => {
+            console.log(date);
+          }}
+        />
         <a
           className="App-link"
           href="https://reactjs.org"

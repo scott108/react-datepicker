@@ -1,6 +1,9 @@
 import {creatCalendar} from '../../src/utils/util';
 
-const expects = [ { year: 2007, month: 11, day: 25, week: 0 },
+const expects = {
+  preMonth: {year: 2007, month: 11, days: 30},
+  nextMonth: {year: 2008, month: 1, days: 31},
+  weeks: [ { year: 2007, month: 11, day: 25, week: 0 },
   { year: 2007, month: 11, day: 26, week: 1 },
   { year: 2007, month: 11, day: 27, week: 2 },
   { year: 2007, month: 11, day: 28, week: 3 },
@@ -42,6 +45,7 @@ const expects = [ { year: 2007, month: 11, day: 25, week: 0 },
   { year: 2008, month: 1, day: 3, week: 4 },
   { year: 2008, month: 1, day: 4, week: 5 },
   { year: 2008, month: 1, day: 5, week: 6 } ]
+}
 
 test('Check the result of 5 + ', () => {
   const calendar = creatCalendar(2007, 12);
