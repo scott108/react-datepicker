@@ -32,19 +32,21 @@ const Calendar = (props) => {
       );
     });
   }
+
   const renderWeeksTable = () => {
-    let table = [];
+    const table = [];
     let index = 0;
     for(let i = 0; i < 6; i++) {
-      let column = [];
+      const column = [];
       for(let j = 0; j < 7; j++) {
         const week = weeks[index++];
-        const isSelected = week.month === month && week.day === day;
-        let fontColor = isSelected ? '#fff' : '#000';
+        const isSelected = week.year === year && week.month === month && week.day === day;
+        const fontColor = isSelected ? '#fff' : week.month === date.month? '#000' : '#A9A9A9';
         column.push(
           <td
+            onClick={() => props.onSelect(week)}
             style={{
-              color: week.month === date.month ? fontColor : '#A9A9A9'
+              color: fontColor
             }}
             className={classNames(isSelected? 'week_selected' : 'week')}
             key={`${i}${j}`}>
@@ -94,15 +96,18 @@ const myDatePicker = (props) => {
   return (
     <div>
       <input
+        readOnly
         type="text"
-        defaultValue={seletedDate}
+        value={seletedDate}
         className={classNames('form-control')}
         aria-label="Small"
         aria-describedby="inputGroup-sizing-sm"></input>
       <Calendar
         seletedDate={seletedDate}
-        onChange={(date) => {
-          console.log(date);
+        onSelect={(week) => {
+          const date = `${week.year}-${week.month}-${week.day}`;
+          setSelectedDate(date);
+          props.onSelect(date);
         }}
       />
     </div>
