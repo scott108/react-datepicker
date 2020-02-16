@@ -1,8 +1,9 @@
-import {creatCalendar} from '../../src/utils/util';
+import {creatCalendar} from '../../src/components/utils/util';
 
 const expects = {
   preMonth: {year: 2007, month: 11, days: 30},
   nextMonth: {year: 2008, month: 1, days: 31},
+  currentMonth: { year: 2007, month: 12, days: 31},
   weeks: [ { year: 2007, month: 11, day: 25, week: 0 },
   { year: 2007, month: 11, day: 26, week: 1 },
   { year: 2007, month: 11, day: 27, week: 2 },

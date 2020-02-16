@@ -1,8 +1,8 @@
 const weekHeaders = ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'];
-const monthNameTable = {
-  1: 'Jan', 2: 'Feb', 3: 'Mar', 4: 'Apr', 5: 'May', 6: 'Jun',
-  7: 'Jul', 8: 'Aug', 9: 'Sep', 10: 'Oct', 11: 'Nov', 12: 'Dec'
-}
+const monthNameTable = [
+  'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
+  'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'
+]
 const daysOfMothTable = {
   1: 31, 2: (year) => (year % 4 === 0 && year % 100 !== 0) || year % 400 === 0? 29 : 28,
   3: 31, 4: 30, 5: 31, 6: 30, 7: 31, 8: 31, 9: 30,
@@ -70,7 +70,7 @@ const creatCalendar = (year, month) => {
   const days = getDays(year, month);
   const beginWeek = getWeek(year, month, 1);
   let indexOffset = beginWeek;
-  let canlanderTable = { preMonth, nextMonth };
+  let canlanderTable = { preMonth, nextMonth, currentMonth: { year, month, days } };
   let weeks = [];
   let week = 0;
   let day = 1;

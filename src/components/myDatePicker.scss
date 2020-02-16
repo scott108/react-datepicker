@@ -1,5 +1,29 @@
+@mixin flexbox {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex; 
+}
+
+@mixin table_item($height, $width) {
+  @include flexbox;
+  justify-content: center;
+  align-items: center;
+  height: $height;
+  width: $width;
+  font-size: 0.8em;
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+@mixin table_item_selected {
+  background: red;
+  border-radius: 100%;
+}
+
 .calendar {
-  display: flex;
+  @include flexbox;
   width: 400px;
   height: auto;
   background: #fff;
@@ -9,6 +33,14 @@
   align-items: center;
   color: black;
   padding: 20px;
+  .header {
+    width: 60%;
+    height: auto;
+    background: gainsboro;
+    &:hover {
+      cursor: pointer;
+    }
+  }
   .arrow_btn {
     background: transparent;
     border: 0;
@@ -17,22 +49,27 @@
     }
   }
   .switcher {
+    @include flexbox;
     width: 100%;
-    display: flex;
     justify-content: space-between;
     align-items: center;
   }
-  .week {
-    height: 50px;
-    width: 50px;
-    font-size: 0.8em;
-    &:hover {
-      cursor: pointer;
-    }
-  }
-  .week_selected {
-    @extend .week;
-    background: red;
-    border-radius: 100%;
-  }
+}
+
+.week_item {
+  @include table_item(50px, 50px);
+}
+
+.week_item_selected {
+  @extend .week_item;
+  @include table_item_selected;
+}
+
+.month_item {
+  @include table_item(70px, 70px);
+}
+
+.month_item_selected {
+  @extend .month_item;
+  @include table_item_selected;
 }
