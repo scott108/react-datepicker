@@ -1,0 +1,97 @@
+@mixin flexbox {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex; 
+}
+
+@mixin table_item($height, $width) {
+  @include flexbox;
+  justify-content: center;
+  align-items: center;
+  height: $height;
+  width: $width;
+  font-size: 0.8em;
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+@mixin table_item_selected {
+  background: #db3d44;
+  border-radius: 100%;
+}
+
+.datepicker {
+  position: relative;
+  display: inline-block;
+  input {
+    text-indent: 10px;
+  }
+}
+
+.input_icon {
+  position: absolute; 
+  left: 5px;
+  top: calc(50% - 0.5em);
+}
+
+.calendar {
+  @include flexbox;
+  position: absolute;
+  width: 400px;
+  height: auto;
+  background: #fff;
+  border: 1px solid gainsboro;
+  box-sizing: border-box;
+  overflow: hidden;
+  flex-direction: column;
+  align-items: center;
+  color: black;
+  font-size: 1.5em;
+  padding: 20px;
+  .title {
+    @include flexbox;
+    justify-content: center;
+    align-items: center;
+    width: 60%;
+    height: auto;
+    &:hover {
+      cursor: pointer;
+    }
+    &:active {
+      background: gainsboro;
+    }
+  }
+  .arrow_btn {
+    background: transparent;
+    border: 0;
+    &:focus {
+      outline: none;
+    }
+  }
+  .header {
+    @include flexbox;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.week_item {
+  @include table_item(50px, 50px);
+}
+
+.week_item_selected {
+  @extend .week_item;
+  @include table_item_selected;
+}
+
+.month_item {
+  @include table_item(70px, 70px);
+}
+
+.month_item_selected {
+  @extend .month_item;
+  @include table_item_selected;
+}
