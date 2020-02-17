@@ -22,18 +22,35 @@
   border-radius: 100%;
 }
 
+.datepicker {
+  position: relative;
+  display: inline-block;
+  input {
+    text-indent: 10px;
+  }
+}
+
+.input_icon {
+  position: absolute; 
+  left: 5px;
+  top: calc(50% - 0.5em);
+}
+
 .calendar {
   @include flexbox;
+  position: absolute;
   width: 400px;
   height: auto;
   background: #fff;
+  border: 1px solid gainsboro;
   box-sizing: border-box;
   overflow: hidden;
   flex-direction: column;
   align-items: center;
   color: black;
+  font-size: 1.5em;
   padding: 20px;
-  .header {
+  .title {
     @include flexbox;
     justify-content: center;
     align-items: center;
@@ -53,7 +70,7 @@
       outline: none;
     }
   }
-  .switcher {
+  .header {
     @include flexbox;
     width: 100%;
     justify-content: space-between;

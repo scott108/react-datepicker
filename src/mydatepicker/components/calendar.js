@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { creatCalendar, monthNameTable, createYearsTable } from '../utils/util';
 import classNames from 'classnames';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -15,6 +15,11 @@ export default function Calendar(props) {
   const current = calendar.currentMonth;
   const [routingKey, setRoutingKey] = useState('weeks');
   const [yearsTable, setYearsTable] = useState(createYearsTable(current.year));
+  useEffect(() => {
+    if(selectedYear > 0) {
+      setCalendar(creatCalendar(selectedYear, selectedMonth));
+    }
+  }, [selectedYear, selectedMonth])
 
   const router = {
     weeks: {
@@ -90,14 +95,14 @@ export default function Calendar(props) {
 
   return (
     <div className={classNames('calendar')}>
-      <div className={classNames('switcher')}>
+      <div className={classNames('header')}>
         <button
           className={classNames('arrow_btn')}
           onClick={() => page.onDateDecrease()}>
             <FontAwesomeIcon icon="angle-left" />
           </button>
           <div
-            className={classNames('header')}
+            className={classNames('title')}
             onClick={() => onRoute()}>
             {page.renderHead()}
           </div>

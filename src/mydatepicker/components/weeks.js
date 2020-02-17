@@ -46,7 +46,6 @@ export default function Weeks(props) {
             );
           }}
         />
-        {/* {renderWeeksTable()} */}
       </tbody>
     </table>
   )

@@ -56,9 +56,7 @@ const getNextMonth = (year, month) => {
 const getWeek = (year, month, day) => {
   const Y = (month === 1 || month === 2) ? year - 1 : year;
   const m = ((month + 9) % 12) + 1;
-  //b
   const y = Y % 100;
-  //a
   const c = Math.floor(Y / 100);
   const startWeekIndex = (day + Math.floor((2.6 * m) - 0.2) + y + Math.floor(y / 4) + Math.floor(c / 4) - (2 * c)) % 7;
   return startWeekIndex < 0 ? 7 + startWeekIndex : startWeekIndex;
@@ -123,10 +121,19 @@ const createYearsTable = (currentYear) => {
   return yearsTable;
 }
 
+const dateISOFormat = (week) => {
+  let year = week.year;
+  let month = week.month;
+  let day = week.day;
+
+  return `${year}-${month > 10 ? month : `0${month}`}-${day > 10 ? day : `0${day}`}`
+}
+
 
 export {
   creatCalendar,
   weekHeaders,
   monthNameTable,
   createYearsTable,
+  dateISOFormat,
 }
