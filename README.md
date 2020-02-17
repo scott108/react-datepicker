@@ -1,3 +1,6 @@
+## Introduce
+Custom date-picker react component. [demo](https://scott-datepicker.netlify.com/)
+
 ## Available Scripts
 
 In the project directory, you can run:
