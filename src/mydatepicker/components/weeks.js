@@ -1,8 +1,7 @@
 import React, { useMemo } from 'react';
-import './myDatePicker.scss';
-import { weekHeaders } from './utils/util';
+import { weekHeaders } from '../utils/util';
 import classNames from 'classnames';
-import SelectedTableBody from './selectedTableBody';
+import SelectableTableBody from './selectableTableBody';
 import moment from 'moment';
 
 export default function Weeks(props) {
@@ -24,7 +23,7 @@ export default function Weeks(props) {
         </tr>
       </thead>
       <tbody>
-        <SelectedTableBody
+        <SelectableTableBody
           rows={6}
           columns={7}
           data={weeks}

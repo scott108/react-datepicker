@@ -1,7 +1,7 @@
 import React from 'react';
 import classNames from 'classnames';
 
-export default function selectedTableBody(props) {
+export default function SelectableTableBody(props) {
   const {
     data,
     onSelect,
@@ -22,7 +22,7 @@ export default function selectedTableBody(props) {
           align='center'
           onClick={() => onSelect(d)}
           key={`${i}${j}`}>
-          {renderComponent(d)}
+          {renderComponent(d, index - 1)}
         </td>
       );
     }

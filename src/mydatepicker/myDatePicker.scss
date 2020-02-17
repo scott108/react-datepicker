@@ -34,11 +34,16 @@
   color: black;
   padding: 20px;
   .header {
+    @include flexbox;
+    justify-content: center;
+    align-items: center;
     width: 60%;
     height: auto;
-    background: gainsboro;
     &:hover {
       cursor: pointer;
+    }
+    &:active {
+      background: gainsboro;
     }
   }
   .arrow_btn {

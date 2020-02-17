@@ -1,7 +1,7 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-import MyDatePicker from './components/myDatePicker';
+import MyDatePicker from './mydatepicker/myDatePicker';
 
 function App() {
   return (

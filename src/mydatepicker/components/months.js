@@ -1,6 +1,5 @@
 import React from 'react';
-import './myDatePicker.scss';
-import SelectedTableBody from './selectedTableBody';
+import SelectableTableBody from './selectableTableBody';
 import classNames from 'classnames';
 
 export default function Months(props) {
@@ -8,7 +7,7 @@ export default function Months(props) {
   return (
     <table style={{width: '100%', hieght: '100%'}}>
       <tbody>
-        <SelectedTableBody
+        <SelectableTableBody
           rows={3}
           columns={4}
           columnHeight={100}

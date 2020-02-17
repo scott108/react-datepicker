@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './myDatePicker.scss';
 import classNames from 'classnames';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import Calendar from './calendar';
+import Calendar from './components/calendar';
 
 
 export default function myDatePicker(props) {

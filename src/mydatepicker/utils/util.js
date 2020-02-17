@@ -111,9 +111,22 @@ const creatCalendar = (year, month) => {
   return canlanderTable;
 }
 
+const createYearsTable = (currentYear) => {
+  let firstYear = currentYear - 9;
+  const years = []
+  const yearsTable = {};
+  for(let i = 0; i < 12; i++) {
+    years.push(firstYear++);
+  }
+  yearsTable['years'] = years;
+  yearsTable['current'] = currentYear;
+  return yearsTable;
+}
+
 
 export {
   creatCalendar,
   weekHeaders,
   monthNameTable,
+  createYearsTable,
 }
