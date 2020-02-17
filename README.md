@@ -17,3 +17,7 @@ You will also see any lint errors in the console.
 ### `npm run build`
 
 Build `index.html` and `bundle.js` in /dist.
+
+### `npm run test`
+
+Run mock test in __test__ folder.

@@ -1,4 +1,4 @@
-import {creatCalendar} from '../../src/components/utils/util';
+import {creatCalendar} from '../../src/mydatepicker/utils/util';
 
 const expects = {
   preMonth: {year: 2007, month: 11, days: 30},
@@ -48,7 +48,7 @@ const expects = {
   { year: 2008, month: 1, day: 5, week: 6 } ]
 }
 
-test('Check the result of 5 + ', () => {
+test('creatCalendar', () => {
   const calendar = creatCalendar(2007, 12);
   expect(JSON.stringify(calendar)).toBe(JSON.stringify(expects));
 })
