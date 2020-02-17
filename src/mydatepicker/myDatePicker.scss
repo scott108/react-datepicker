@@ -11,7 +11,7 @@
   align-items: center;
   height: $height;
   width: $width;
-  font-size: 0.8em;
+  // font-size: 0.8em;
   &:hover {
     cursor: pointer;
   }
@@ -39,7 +39,6 @@
 .calendar {
   @include flexbox;
   position: absolute;
-  width: 400px;
   height: auto;
   background: #fff;
   border: 1px solid gainsboro;
@@ -48,8 +47,27 @@
   flex-direction: column;
   align-items: center;
   color: black;
-  font-size: 1.5em;
-  padding: 20px;
+  @media all and (min-width: 960px) {
+    width: 400px;
+    font-size: 1.5em;
+    padding: 20px;
+  }
+  @media all and (min-width: 760px) and (max-width: 959px) {
+    width: 380px;
+    font-size: 1.5em;
+    padding: 20px;
+  }
+  @media all and (min-width: 480px) and (max-width: 759px) {
+    width: 340px;
+    font-size: 1.3em;
+    padding: 10px;
+  }
+  @media all and (max-width: 480px) {
+    width: 300px;
+    font-size: 1.2em;
+    padding: 5px;
+  }
+
   .title {
     @include flexbox;
     justify-content: center;
@@ -79,7 +97,18 @@
 }
 
 .week_item {
-  @include table_item(50px, 50px);
+  @media all and (min-width: 960px) {
+    @include table_item(50px, 50px);
+  }
+  @media all and (min-width: 760px) and (max-width: 959px) {
+    @include table_item(40px, 40px);
+  }
+  @media all and (min-width: 480px) and (max-width: 759px) {
+    @include table_item(40px, 40px);
+  }
+  @media all and (max-width: 480px) {
+    @include table_item(40px, 40px);
+  }
 }
 
 .week_item_selected {

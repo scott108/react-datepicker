@@ -10,7 +10,12 @@ export default function Weeks(props) {
   const renderWeeksHeader = () => {
     return weekHeaders.map((head) => {
       return (
-        <th key={head}>{head}</th>
+        <th key={head}>
+          <div
+            className={classNames('week_item')}>
+              {head}
+          </div>
+        </th>
       );
     });
   }
