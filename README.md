@@ -1,5 +1,5 @@
 ## Introduce
-Custom date-picker react component. [demo](https://scott-datepicker.netlify.com/)
+Custom date-picker react component. [demo](https://scott-calendar.netlify.app/)
 
 ## Available Scripts
 
